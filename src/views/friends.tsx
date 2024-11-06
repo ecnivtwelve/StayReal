@@ -1,6 +1,6 @@
 import { createResource, For, Show, type Component } from "solid-js";
 import { relationships_friends } from "../api/requests/relationships/friends/list";
-import MdiChevronRight from '~icons/mdi/chevron-right'
+import MdiArrowRight from '~icons/mdi/arrow-right'
 
 const FriendsView: Component = () => {
   const [friends] = createResource(relationships_friends);
@@ -10,7 +10,7 @@ const FriendsView: Component = () => {
       <header class="mb-12">
         <nav class="flex items-center justify-end px-4 pb-2 pt-4">
           <a href="/feed">
-            <MdiChevronRight class="text-xl" />
+            <MdiArrowRight class="text-xl" />
           </a>
         </nav>
       </header>

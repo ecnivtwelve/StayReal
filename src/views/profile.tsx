@@ -1,6 +1,6 @@
 import { createResource, For, Show, type Component } from "solid-js";
 import { person_me } from "../api";
-import MdiChevronLeft from '~icons/mdi/chevron-left'
+import MdiArrowLeft from '~icons/mdi/arrow-left'
 
 const ProfileView: Component = () => {
   const [me] = createResource(person_me);
@@ -10,7 +10,7 @@ const ProfileView: Component = () => {
       <header class="z-20 fixed top-0 inset-x-0 bg-gradient-to-b from-black to-transparent pb-2 pt-[env(safe-area-inset-top)]">
         <nav class="flex items-center justify-between px-4 pb-2 pt-4">
           <a href="/feed">
-            <MdiChevronLeft class="text-xl" />
+            <MdiArrowLeft class="text-xl" />
           </a>
 
           <a href="/settings">

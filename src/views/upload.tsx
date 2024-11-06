@@ -2,6 +2,8 @@ import { type Component, createSignal, Show } from "solid-js";
 import { content_posts_create, content_posts_upload_url, upload_content,  } from "../api/requests/content/posts/upload";
 import { createMediaPermissionRequest, createStream } from "@solid-primitives/stream";
 import { useNavigate } from "@solidjs/router";
+import MdiArrowLeft from '~icons/mdi/arrow-left'
+import MdiRotateCamera from '~icons/mdi/sync'
 
 const UploadView: Component = () => {
   createMediaPermissionRequest();
@@ -225,7 +227,7 @@ const UploadView: Component = () => {
       <header class="py-4">
         <nav class="flex items-center justify-between px-4">
           <a href="/feed">
-            back
+            <MdiArrowLeft />
           </a>
           <Show when={backImage() && frontImage()}>
             <button type="button"
@@ -282,11 +284,8 @@ const UploadView: Component = () => {
       <div class="pb-8 pt-4 flex justify-between px-4 items-center">
         <Show when={!frontImage() || !backImage()}>
           <div class="flex flex-col gap-2">
-            <button type="button" onClick={() => handleFileSelector("front")}>
-              select front
-            </button>
-            <button type="button" onClick={() => handleFileSelector("back")}>
-              select back
+            <button type="button" onClick={() => handleFileSelector(!frontImage() ? "front" : "back")}>
+              <MdiRotateCamera class="text-2xl text-white" />
             </button>
           </div>
 
